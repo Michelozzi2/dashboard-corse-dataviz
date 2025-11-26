@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
-import { ScatterChart, Scatter, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, ZAxis } from 'recharts';
+import { ScatterChart, Scatter, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, ZAxis, Label } from 'recharts';
 import { Activity, Users, MapPin, Trophy, Zap, Home, Building2, Flame, AlertTriangle, Calendar } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 
@@ -35,19 +35,26 @@ function App() {
               theme: '#38bdf8', sec: '#c084fc', 
               mapData: dataCities, type: 'city',
               radius: (d) => Math.max(3, Math.min(d.nb_equipements / 1.5, 25)),
-              title: 'Offre Sportive'
+              title: 'Offre Sportive',
+              // AJOUT DES LÉGENDES ICI :
+              xLabel: 'Population Jeune (15-29 ans)',
+              yLabel: 'Nombre d\'équipements'
           };
           case 'energy': return {
               theme: '#fbbf24', sec: '#f97316', 
               mapData: dataCities, type: 'city',
               radius: (d) => Math.max(3, Math.min(Math.sqrt(d.consototale) / 10, 30)),
-              title: 'Intensité Énergétique'
+              title: 'Intensité Énergétique',
+              // AJOUT DES LÉGENDES ICI :
+              xLabel: 'Population Jeune (Proxy taille)',
+              yLabel: 'Consommation (MWh)'
           };
           case 'fire': return {
               theme: '#ef4444', sec: '#7f1d1d', 
-              mapData: dataFires, type: 'event', // Attention: source de données différente
-              radius: (d) => Math.max(4, Math.min(Math.sqrt(d.surface_ha) * 2, 40)), // Gros cercles pour gros feux
-              title: 'Historique Incendies'
+              mapData: dataFires, type: 'event',
+              radius: (d) => Math.max(4, Math.min(Math.sqrt(d.surface_ha) * 2, 40)),
+              title: 'Historique Incendies',
+              // Pas de scatter plot pour fire, donc pas besoin de labels ici
           };
           default: return {};
       }
@@ -274,68 +281,42 @@ function App() {
                   // --- GRAPHIQUE SPORT & ENERGIE (SCATTER) ---
                   <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                    
+                    {/* AXE X avec Label */}
                     <XAxis 
                       type="number" 
                       dataKey="population_15_29" 
                       name="Pop. Jeune" 
                       stroke="#94a3b8" 
                       tick={{fill: '#94a3b8'}} 
-                    />
+                    >
+                        <Label 
+                            value={config.xLabel} 
+                            offset={-10} 
+                            position="insideBottom" 
+                            style={{ fill: '#cbd5e1', fontSize: '12px' }} 
+                        />
+                    </XAxis>
+
+                    {/* AXE Y avec Label */}
                     <YAxis 
                       type="number" 
                       dataKey={activeTab === 'sport' ? 'nb_equipements' : 'consototale'} 
                       name="Y" 
                       stroke="#94a3b8" 
                       tick={{fill: '#94a3b8'}} 
-                    />
+                    >
+                        <Label 
+                            value={config.yLabel} 
+                            angle={-90} 
+                            position="insideLeft" 
+                            style={{ fill: '#cbd5e1', fontSize: '12px', textAnchor: 'middle' }} 
+                        />
+                    </YAxis>
+
                     <RechartsTooltip 
-                        cursor={{ strokeDasharray: '3 3', stroke: '#475569' }} 
-                        content={({ active, payload }) => {
-                            if (active && payload && payload.length) {
-                                const d = payload[0].payload;
-                                return (
-                                <div className="bg-dark-900 border border-dark-700 p-3 rounded-lg shadow-xl text-xs z-50 min-w-[120px]">
-                                    {/* Le Nom de la ville en BLANC et GRAS */}
-                                    <p className="font-bold text-white text-sm mb-2 border-b border-dark-700 pb-1">
-                                        {d.nom}
-                                    </p>
-                                    
-                                    {/* Conditionnel selon l'onglet */}
-                                    {activeTab === 'energy' && (
-                                        <div className="space-y-1">
-                                            <div className="flex justify-between items-center gap-4">
-                                                <span className="text-slate-400">Conso:</span>
-                                                {/* Valeur en couleur du thème */}
-                                                <span className="font-mono font-bold" style={{ color: config.theme }}>
-                                                    {Math.round(d.consototale)} MWh
-                                                </span>
-                                            </div>
-                                            <div className="text-[10px] text-slate-500 mt-1">
-                                                Résidentiel: {d.part_residentiel}%
-                                            </div>
-                                        </div>
-                                    )}
-                                    
-                                    {activeTab === 'sport' && (
-                                        <div className="flex justify-between items-center gap-4">
-                                            <span className="text-slate-400">Équipements:</span>
-                                            {/* Valeur en couleur du thème */}
-                                            <span className="font-mono font-bold" style={{ color: config.theme }}>
-                                                {d.nb_equipements}
-                                            </span>
-                                        </div>
-                                    )}
-                                    
-                                    {/* Info Population (commune aux deux) */}
-                                    <div className="mt-2 pt-2 border-t border-dark-700 flex justify-between text-[10px]">
-                                        <span className="text-slate-500">Pop. Jeune:</span>
-                                        <span className="text-slate-300">{d.population_15_29}</span>
-                                    </div>
-                                </div>
-                                );
-                            }
-                            return null;
-                        }}
+                        cursor={{ strokeDasharray: '3 3' }}
+                        contentStyle={{backgroundColor: '#0f172a', borderColor: '#334155', color: '#fff'}}
                     />
                     <Scatter 
                         name="Communes" 
