@@ -9,3 +9,9 @@
   border-radius: 0.75rem;
   z-index: 0;
 }
+
+/* Limiter la hauteur du dropdown à 5 éléments */
+.select-scrollable {
+  max-height: 10rem;
+  overflow-y: auto;
+}
