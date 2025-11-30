@@ -84,7 +84,11 @@ npm run deploy
 
 ---
 
-## 📊 Sources des données
+## 📊 Sources et traitement des données
+
+Les données brutes ont été **collectées, nettoyées et transformées** en amont du projet pour générer les fichiers JSON utilisés par la dataviz (`data.json` et `fires.json`).
+
+### Sources originales
 
 | Thématique | Source |
 |------------|--------|
@@ -92,6 +96,30 @@ npm run deploy
 | Équipements sportifs | [data.gouv.fr](https://www.data.gouv.fr/datasets/recensement-des-equipements-sportifs-espaces-et-sites-de-pratiques/) |
 | Population | [INSEE](https://www.insee.fr/fr/statistiques/8202264?sommaire=8202287) |
 | Incendies | [BDIFF](https://bdiff.agriculture.gouv.fr/incendies) |
+
+### Traitements appliqués
+
+#### 🔥 Incendies
+- **Nettoyage** : normalisation des noms de communes (suppression accents, traits d'union, standardisation "Saint" → "ST")
+- **Conversion** : surface en m² → hectares, filtrage des incendies >1 ha
+- **Géolocalisation** : rattachement des coordonnées GPS via correspondance avec le référentiel des communes
+- **Export** : génération de `fires.json` avec id, commune, année, date, surface et coordonnées
+
+#### ⚡ Énergie
+- **Filtrage** : départements corses (2A/2B), filière Électricité uniquement, année la plus récente
+- **Agrégation** : somme des consommations par commune (plusieurs opérateurs possibles)
+- **Calcul** : parts sectorielles en pourcentage (Résidentiel, Tertiaire, Industrie, Agriculture)
+- **Fusion** : enrichissement du `data.json` principal
+
+#### 👥 Population
+- **Parsing** : lecture du fichier INSEE avec gestion des espaces insécables
+- **Correspondance** : rattachement par code INSEE
+- **Fusion** : ajout de `population_totale` dans `data.json`
+
+#### 🏅 Équipements sportifs
+- **Filtrage** : communes corses uniquement
+- **Comptage** : agrégation du nombre d'équipements par commune
+- **Fusion** : enrichissement du `data.json` avec `nb_equipements` et `population_15_29`
 
 ---
 
