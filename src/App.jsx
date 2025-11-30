@@ -533,9 +533,9 @@ function App() {
                       <Pie
                         data={energyPieData}
                         cx="50%"
-                        cy="42%"
-                        innerRadius="35%"
-                        outerRadius="55%"
+                        cy="45%"
+                        innerRadius="30%"
+                        outerRadius="50%"
                         paddingAngle={3}
                         dataKey="value"
                         labelLine={false}
