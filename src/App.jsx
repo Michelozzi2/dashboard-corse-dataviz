@@ -12,6 +12,7 @@ import CustomSelect from './components/CustomSelect';
 const dataCities = rawDataCities.map(d => ({
   ...d,
   population_15_29: Math.round(d.population_15_29 || 0),
+  population_totale: d.population_totale || 0,
   nb_equipements: d.nb_equipements || 0,
   consototale: d.consototale || 0,
   z_sport: d.population_15_29,
@@ -396,8 +397,8 @@ function App() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
                   <XAxis
                     type="number"
-                    dataKey="population_15_29"
-                    name="Pop. Jeune"
+                    dataKey={activeTab === 'sport' ? 'population_15_29' : 'population_totale'}
+                    name="Population"
                     stroke="#94a3b8"
                     tick={{ fill: '#94a3b8' }}
                   >
@@ -437,12 +438,14 @@ function App() {
                         const data = payload[0].payload;
                         const yValue = activeTab === 'sport' ? data.nb_equipements : data[energyMetric];
                         const yLabel = activeTab === 'sport' ? 'Équipements' : (energyMetric === 'consototale' ? 'Consommation (MWh)' : 'Part (%)');
+                        const popValue = activeTab === 'sport' ? data.population_15_29 : data.population_totale;
+                        const popLabel = activeTab === 'sport' ? 'Population (15-29 ans)' : 'Population';
                         return (
                           <div className="bg-dark-900 border border-dark-700 rounded-lg p-3 shadow-xl">
                             <p className="text-white font-bold mb-2">{data.nom}</p>
                             <p className="text-slate-300 text-sm">
-                              <span className="text-slate-400">Population : </span>
-                              {data.population_15_29?.toLocaleString()}
+                              <span className="text-slate-400">{popLabel} : </span>
+                              {popValue?.toLocaleString()}
                             </p>
                             <p className="text-slate-300 text-sm">
                               <span className="text-slate-400">{yLabel} : </span>

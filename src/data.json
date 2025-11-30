@@ -14,7 +14,8 @@
     "part_residentiel": 87.2,
     "part_tertiaire": 11.5,
     "part_agriculture": 0.0,
-    "part_industrie": 0.5
+    "part_industrie": 0.5,
+    "population_totale": 3277
   },
   {
     "CODGEO": "2A004",
@@ -31,7 +32,8 @@
     "part_residentiel": 46.1,
     "part_tertiaire": 42.7,
     "part_agriculture": 0.0,
-    "part_industrie": 7.5
+    "part_industrie": 7.5,
+    "population_totale": 72647
   },
   {
     "CODGEO": "2A006",
@@ -48,7 +50,8 @@
     "part_residentiel": 82.4,
     "part_tertiaire": 11.5,
     "part_agriculture": 0.4,
-    "part_industrie": 3.6
+    "part_industrie": 3.6,
+    "population_totale": 3562
   },
   {
     "CODGEO": "2A008",
@@ -65,7 +68,8 @@
     "part_residentiel": 63.7,
     "part_tertiaire": 31.7,
     "part_agriculture": 0.0,
-    "part_industrie": 2.3
+    "part_industrie": 2.3,
+    "population_totale": 1785
   },
   {
     "CODGEO": "2A014",
@@ -82,7 +86,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 74
   },
   {
     "CODGEO": "2A017",
@@ -99,7 +104,8 @@
     "part_residentiel": 78.9,
     "part_tertiaire": 10.9,
     "part_agriculture": 0.0,
-    "part_industrie": 5.2
+    "part_industrie": 5.2,
+    "population_totale": 1795
   },
   {
     "CODGEO": "2A024",
@@ -116,7 +122,8 @@
     "part_residentiel": 76.5,
     "part_tertiaire": 16.4,
     "part_agriculture": 0.0,
-    "part_industrie": 7.1
+    "part_industrie": 7.1,
+    "population_totale": 185
   },
   {
     "CODGEO": "2A031",
@@ -133,7 +140,8 @@
     "part_residentiel": 50.4,
     "part_tertiaire": 16.5,
     "part_agriculture": 0.6,
-    "part_industrie": 29.8
+    "part_industrie": 29.8,
+    "population_totale": 517
   },
   {
     "CODGEO": "2A032",
@@ -150,7 +158,8 @@
     "part_residentiel": 74.7,
     "part_tertiaire": 12.2,
     "part_agriculture": 1.2,
-    "part_industrie": 9.0
+    "part_industrie": 9.0,
+    "population_totale": 4250
   },
   {
     "CODGEO": "2A035",
@@ -167,7 +176,8 @@
     "part_residentiel": 56.8,
     "part_tertiaire": 33.4,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 159
   },
   {
     "CODGEO": "2A040",
@@ -184,7 +194,8 @@
     "part_residentiel": 74.8,
     "part_tertiaire": 20.5,
     "part_agriculture": 0.0,
-    "part_industrie": 1.9
+    "part_industrie": 1.9,
+    "population_totale": 372
   },
   {
     "CODGEO": "2A041",
@@ -201,7 +212,8 @@
     "part_residentiel": 44.2,
     "part_tertiaire": 46.5,
     "part_agriculture": 0.5,
-    "part_industrie": 2.6
+    "part_industrie": 2.6,
+    "population_totale": 3204
   },
   {
     "CODGEO": "2A048",
@@ -218,7 +230,8 @@
     "part_residentiel": 57.4,
     "part_tertiaire": 37.3,
     "part_agriculture": 0.0,
-    "part_industrie": 1.4
+    "part_industrie": 1.4,
+    "population_totale": 503
   },
   {
     "CODGEO": "2A061",
@@ -235,7 +248,8 @@
     "part_residentiel": 90.5,
     "part_tertiaire": 9.5,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 114
   },
   {
     "CODGEO": "2A062",
@@ -252,7 +266,8 @@
     "part_residentiel": 85.8,
     "part_tertiaire": 9.6,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 375
   },
   {
     "CODGEO": "2A065",
@@ -269,7 +284,8 @@
     "part_residentiel": 60.3,
     "part_tertiaire": 29.5,
     "part_agriculture": 0.0,
-    "part_industrie": 3.0
+    "part_industrie": 3.0,
+    "population_totale": 1280
   },
   {
     "CODGEO": "2A066",
@@ -286,7 +302,8 @@
     "part_residentiel": 89.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 11.0
+    "part_industrie": 11.0,
+    "population_totale": 60
   },
   {
     "CODGEO": "2A070",
@@ -303,7 +320,8 @@
     "part_residentiel": 65.6,
     "part_tertiaire": 23.9,
     "part_agriculture": 3.2,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 384
   },
   {
     "CODGEO": "2A085",
@@ -320,7 +338,8 @@
     "part_residentiel": 78.5,
     "part_tertiaire": 16.7,
     "part_agriculture": 0.5,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 1492
   },
   {
     "CODGEO": "2A089",
@@ -337,7 +356,8 @@
     "part_residentiel": 68.3,
     "part_tertiaire": 31.7,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 133
   },
   {
     "CODGEO": "2A090",
@@ -354,7 +374,8 @@
     "part_residentiel": 72.4,
     "part_tertiaire": 22.4,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 722
   },
   {
     "CODGEO": "2A092",
@@ -371,7 +392,8 @@
     "part_residentiel": 68.9,
     "part_tertiaire": 24.7,
     "part_agriculture": 0.0,
-    "part_industrie": 2.3
+    "part_industrie": 2.3,
+    "population_totale": 1151
   },
   {
     "CODGEO": "2A094",
@@ -388,7 +410,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 73
   },
   {
     "CODGEO": "2A098",
@@ -405,7 +428,8 @@
     "part_residentiel": 67.5,
     "part_tertiaire": 16.9,
     "part_agriculture": 0.5,
-    "part_industrie": 8.0
+    "part_industrie": 8.0,
+    "population_totale": 724
   },
   {
     "CODGEO": "2A099",
@@ -422,7 +446,8 @@
     "part_residentiel": 72.8,
     "part_tertiaire": 23.8,
     "part_agriculture": 0.0,
-    "part_industrie": 3.4
+    "part_industrie": 3.4,
+    "population_totale": 278
   },
   {
     "CODGEO": "2A100",
@@ -439,7 +464,8 @@
     "part_residentiel": 74.3,
     "part_tertiaire": 25.7,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 67
   },
   {
     "CODGEO": "2A104",
@@ -456,7 +482,8 @@
     "part_residentiel": 84.1,
     "part_tertiaire": 8.8,
     "part_agriculture": 0.0,
-    "part_industrie": 5.7
+    "part_industrie": 5.7,
+    "population_totale": 1353
   },
   {
     "CODGEO": "2A108",
@@ -473,7 +500,8 @@
     "part_residentiel": 61.6,
     "part_tertiaire": 26.8,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 213
   },
   {
     "CODGEO": "2A114",
@@ -490,7 +518,8 @@
     "part_residentiel": 52.6,
     "part_tertiaire": 38.2,
     "part_agriculture": 3.8,
-    "part_industrie": 1.5
+    "part_industrie": 1.5,
+    "population_totale": 1559
   },
   {
     "CODGEO": "2A115",
@@ -507,7 +536,8 @@
     "part_residentiel": 87.7,
     "part_tertiaire": 12.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 151
   },
   {
     "CODGEO": "2A119",
@@ -524,7 +554,8 @@
     "part_residentiel": 77.3,
     "part_tertiaire": 14.1,
     "part_agriculture": 0.0,
-    "part_industrie": 8.6
+    "part_industrie": 8.6,
+    "population_totale": 140
   },
   {
     "CODGEO": "2A127",
@@ -541,7 +572,8 @@
     "part_residentiel": 83.8,
     "part_tertiaire": 16.2,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 91
   },
   {
     "CODGEO": "2A130",
@@ -558,7 +590,8 @@
     "part_residentiel": 50.0,
     "part_tertiaire": 34.6,
     "part_agriculture": 0.0,
-    "part_industrie": 12.0
+    "part_industrie": 12.0,
+    "population_totale": 3398
   },
   {
     "CODGEO": "2A139",
@@ -575,7 +608,8 @@
     "part_residentiel": 60.8,
     "part_tertiaire": 26.5,
     "part_agriculture": 4.9,
-    "part_industrie": 3.4
+    "part_industrie": 3.4,
+    "population_totale": 1889
   },
   {
     "CODGEO": "2A141",
@@ -592,7 +626,8 @@
     "part_residentiel": 90.3,
     "part_tertiaire": 9.7,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 128
   },
   {
     "CODGEO": "2A142",
@@ -609,7 +644,8 @@
     "part_residentiel": 64.7,
     "part_tertiaire": 32.2,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 674
   },
   {
     "CODGEO": "2A144",
@@ -626,7 +662,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 102
   },
   {
     "CODGEO": "2A154",
@@ -643,7 +680,8 @@
     "part_residentiel": 90.3,
     "part_tertiaire": 9.7,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 106
   },
   {
     "CODGEO": "2A160",
@@ -660,7 +698,8 @@
     "part_residentiel": 95.7,
     "part_tertiaire": 4.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 259
   },
   {
     "CODGEO": "2A181",
@@ -677,7 +716,8 @@
     "part_residentiel": 73.1,
     "part_tertiaire": 12.1,
     "part_agriculture": 2.5,
-    "part_industrie": 12.4
+    "part_industrie": 12.4,
+    "population_totale": 628
   },
   {
     "CODGEO": "2A186",
@@ -694,7 +734,8 @@
     "part_residentiel": 92.5,
     "part_tertiaire": 7.5,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 218
   },
   {
     "CODGEO": "2A189",
@@ -711,7 +752,8 @@
     "part_residentiel": 54.8,
     "part_tertiaire": 37.9,
     "part_agriculture": 0.0,
-    "part_industrie": 0.4
+    "part_industrie": 0.4,
+    "population_totale": 1217
   },
   {
     "CODGEO": "2A198",
@@ -728,7 +770,8 @@
     "part_residentiel": 27.7,
     "part_tertiaire": 65.2,
     "part_agriculture": 0.0,
-    "part_industrie": 2.1
+    "part_industrie": 2.1,
+    "population_totale": 511
   },
   {
     "CODGEO": "2A200",
@@ -745,7 +788,8 @@
     "part_residentiel": 73.2,
     "part_tertiaire": 26.8,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 134
   },
   {
     "CODGEO": "2A209",
@@ -762,7 +806,8 @@
     "part_residentiel": 88.1,
     "part_tertiaire": 9.4,
     "part_agriculture": 0.0,
-    "part_industrie": 0.3
+    "part_industrie": 0.3,
+    "population_totale": 2038
   },
   {
     "CODGEO": "2A211",
@@ -779,7 +824,8 @@
     "part_residentiel": 74.3,
     "part_tertiaire": 13.6,
     "part_agriculture": 0.0,
-    "part_industrie": 4.2
+    "part_industrie": 4.2,
+    "population_totale": 564
   },
   {
     "CODGEO": "2A212",
@@ -796,7 +842,8 @@
     "part_residentiel": 50.4,
     "part_tertiaire": 42.3,
     "part_agriculture": 0.0,
-    "part_industrie": 3.0
+    "part_industrie": 3.0,
+    "population_totale": 461
   },
   {
     "CODGEO": "2A228",
@@ -813,7 +860,8 @@
     "part_residentiel": 70.1,
     "part_tertiaire": 22.3,
     "part_agriculture": 0.0,
-    "part_industrie": 3.2
+    "part_industrie": 3.2,
+    "population_totale": 1945
   },
   {
     "CODGEO": "2A232",
@@ -830,7 +878,8 @@
     "part_residentiel": 87.2,
     "part_tertiaire": 12.8,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 278
   },
   {
     "CODGEO": "2A247",
@@ -847,7 +896,8 @@
     "part_residentiel": 52.8,
     "part_tertiaire": 36.9,
     "part_agriculture": 0.2,
-    "part_industrie": 3.5
+    "part_industrie": 3.5,
+    "population_totale": 11040
   },
   {
     "CODGEO": "2A249",
@@ -864,7 +914,8 @@
     "part_residentiel": 44.8,
     "part_tertiaire": 43.3,
     "part_agriculture": 0.0,
-    "part_industrie": 6.2
+    "part_industrie": 6.2,
+    "population_totale": 3705
   },
   {
     "CODGEO": "2A253",
@@ -881,7 +932,8 @@
     "part_residentiel": 79.5,
     "part_tertiaire": 20.5,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 51
   },
   {
     "CODGEO": "2A254",
@@ -898,7 +950,8 @@
     "part_residentiel": 79.7,
     "part_tertiaire": 16.6,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 195
   },
   {
     "CODGEO": "2A269",
@@ -915,7 +968,8 @@
     "part_residentiel": 40.8,
     "part_tertiaire": 55.2,
     "part_agriculture": 0.0,
-    "part_industrie": 1.0
+    "part_industrie": 1.0,
+    "population_totale": 1411
   },
   {
     "CODGEO": "2A271",
@@ -932,7 +986,8 @@
     "part_residentiel": 18.6,
     "part_tertiaire": 53.6,
     "part_agriculture": 0.4,
-    "part_industrie": 23.5
+    "part_industrie": 23.5,
+    "population_totale": 3309
   },
   {
     "CODGEO": "2A272",
@@ -949,7 +1004,8 @@
     "part_residentiel": 51.8,
     "part_tertiaire": 39.0,
     "part_agriculture": 1.5,
-    "part_industrie": 3.9
+    "part_industrie": 3.9,
+    "population_totale": 3408
   },
   {
     "CODGEO": "2A276",
@@ -966,7 +1022,8 @@
     "part_residentiel": 41.4,
     "part_tertiaire": 48.9,
     "part_agriculture": 2.4,
-    "part_industrie": 2.3
+    "part_industrie": 2.3,
+    "population_totale": 563
   },
   {
     "CODGEO": "2A278",
@@ -983,7 +1040,8 @@
     "part_residentiel": 80.2,
     "part_tertiaire": 19.8,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 81
   },
   {
     "CODGEO": "2A279",
@@ -1000,7 +1058,8 @@
     "part_residentiel": 53.9,
     "part_tertiaire": 39.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 120
   },
   {
     "CODGEO": "2A282",
@@ -1017,7 +1076,8 @@
     "part_residentiel": 89.9,
     "part_tertiaire": 10.1,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 152
   },
   {
     "CODGEO": "2A288",
@@ -1034,7 +1094,8 @@
     "part_residentiel": 72.0,
     "part_tertiaire": 13.8,
     "part_agriculture": 0.9,
-    "part_industrie": 10.6
+    "part_industrie": 10.6,
+    "population_totale": 1556
   },
   {
     "CODGEO": "2A300",
@@ -1051,7 +1112,8 @@
     "part_residentiel": 84.4,
     "part_tertiaire": 11.2,
     "part_agriculture": 0.0,
-    "part_industrie": 0.9
+    "part_industrie": 0.9,
+    "population_totale": 1077
   },
   {
     "CODGEO": "2A308",
@@ -1068,7 +1130,8 @@
     "part_residentiel": 73.9,
     "part_tertiaire": 21.1,
     "part_agriculture": 0.0,
-    "part_industrie": 2.5
+    "part_industrie": 2.5,
+    "population_totale": 381
   },
   {
     "CODGEO": "2A310",
@@ -1085,7 +1148,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 102
   },
   {
     "CODGEO": "2A312",
@@ -1102,7 +1166,8 @@
     "part_residentiel": 67.2,
     "part_tertiaire": 30.6,
     "part_agriculture": 0.0,
-    "part_industrie": 2.2
+    "part_industrie": 2.2,
+    "population_totale": 387
   },
   {
     "CODGEO": "2A323",
@@ -1119,7 +1184,8 @@
     "part_residentiel": 44.4,
     "part_tertiaire": 11.1,
     "part_agriculture": 0.0,
-    "part_industrie": 40.3
+    "part_industrie": 40.3,
+    "population_totale": 405
   },
   {
     "CODGEO": "2A324",
@@ -1136,7 +1202,8 @@
     "part_residentiel": 91.0,
     "part_tertiaire": 9.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 394
   },
   {
     "CODGEO": "2A326",
@@ -1153,7 +1220,8 @@
     "part_residentiel": 46.1,
     "part_tertiaire": 15.4,
     "part_agriculture": 0.0,
-    "part_industrie": 38.5
+    "part_industrie": 38.5,
+    "population_totale": 121
   },
   {
     "CODGEO": "2A330",
@@ -1170,7 +1238,8 @@
     "part_residentiel": 81.6,
     "part_tertiaire": 6.9,
     "part_agriculture": 0.0,
-    "part_industrie": 6.6
+    "part_industrie": 6.6,
+    "population_totale": 501
   },
   {
     "CODGEO": "2A336",
@@ -1187,7 +1256,8 @@
     "part_residentiel": 80.0,
     "part_tertiaire": 14.5,
     "part_agriculture": 0.0,
-    "part_industrie": 1.8
+    "part_industrie": 1.8,
+    "population_totale": 522
   },
   {
     "CODGEO": "2A345",
@@ -1204,7 +1274,8 @@
     "part_residentiel": 75.9,
     "part_tertiaire": 13.5,
     "part_agriculture": 8.3,
-    "part_industrie": 2.3
+    "part_industrie": 2.3,
+    "population_totale": 606
   },
   {
     "CODGEO": "2A348",
@@ -1221,7 +1292,8 @@
     "part_residentiel": 55.5,
     "part_tertiaire": 37.4,
     "part_agriculture": 0.0,
-    "part_industrie": 1.5
+    "part_industrie": 1.5,
+    "population_totale": 929
   },
   {
     "CODGEO": "2A357",
@@ -1238,7 +1310,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 48
   },
   {
     "CODGEO": "2A359",
@@ -1255,7 +1328,8 @@
     "part_residentiel": 84.7,
     "part_tertiaire": 15.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 219
   },
   {
     "CODGEO": "2A360",
@@ -1272,7 +1346,8 @@
     "part_residentiel": 88.8,
     "part_tertiaire": 11.2,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 128
   },
   {
     "CODGEO": "2A362",
@@ -1289,7 +1364,8 @@
     "part_residentiel": 65.8,
     "part_tertiaire": 27.8,
     "part_agriculture": 0.5,
-    "part_industrie": 1.2
+    "part_industrie": 1.2,
+    "population_totale": 2755
   },
   {
     "CODGEO": "2B007",
@@ -1306,7 +1382,8 @@
     "part_residentiel": 74.5,
     "part_tertiaire": 24.5,
     "part_agriculture": 0.0,
-    "part_industrie": 1.1
+    "part_industrie": 1.1,
+    "population_totale": 204
   },
   {
     "CODGEO": "2B009",
@@ -1323,7 +1400,8 @@
     "part_residentiel": 32.5,
     "part_tertiaire": 51.5,
     "part_agriculture": 6.1,
-    "part_industrie": 6.9
+    "part_industrie": 6.9,
+    "population_totale": 2185
   },
   {
     "CODGEO": "2B010",
@@ -1340,7 +1418,8 @@
     "part_residentiel": 50.4,
     "part_tertiaire": 43.7,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 358
   },
   {
     "CODGEO": "2B016",
@@ -1357,7 +1436,8 @@
     "part_residentiel": 34.3,
     "part_tertiaire": 53.5,
     "part_agriculture": 3.1,
-    "part_industrie": 5.8
+    "part_industrie": 5.8,
+    "population_totale": 556
   },
   {
     "CODGEO": "2B020",
@@ -1374,7 +1454,8 @@
     "part_residentiel": 64.7,
     "part_tertiaire": 30.4,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 597
   },
   {
     "CODGEO": "2B023",
@@ -1391,7 +1472,8 @@
     "part_residentiel": 65.7,
     "part_tertiaire": 34.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 115
   },
   {
     "CODGEO": "2B025",
@@ -1408,7 +1490,8 @@
     "part_residentiel": 85.1,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 82
   },
   {
     "CODGEO": "2B029",
@@ -1425,7 +1508,8 @@
     "part_residentiel": 90.0,
     "part_tertiaire": 10.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 297
   },
   {
     "CODGEO": "2B033",
@@ -1442,7 +1526,8 @@
     "part_residentiel": 45.4,
     "part_tertiaire": 47.3,
     "part_agriculture": 0.1,
-    "part_industrie": 3.1
+    "part_industrie": 3.1,
+    "population_totale": 48296
   },
   {
     "CODGEO": "2B037",
@@ -1459,7 +1544,8 @@
     "part_residentiel": 52.5,
     "part_tertiaire": 34.2,
     "part_agriculture": 0.3,
-    "part_industrie": 9.2
+    "part_industrie": 9.2,
+    "population_totale": 7732
   },
   {
     "CODGEO": "2B042",
@@ -1476,7 +1562,8 @@
     "part_residentiel": 52.0,
     "part_tertiaire": 32.7,
     "part_agriculture": 0.4,
-    "part_industrie": 11.9
+    "part_industrie": 11.9,
+    "population_totale": 9254
   },
   {
     "CODGEO": "2B043",
@@ -1493,7 +1580,8 @@
     "part_residentiel": 78.3,
     "part_tertiaire": 16.9,
     "part_agriculture": 0.0,
-    "part_industrie": 2.1
+    "part_industrie": 2.1,
+    "population_totale": 1602
   },
   {
     "CODGEO": "2B047",
@@ -1510,7 +1598,8 @@
     "part_residentiel": 66.3,
     "part_tertiaire": 19.3,
     "part_agriculture": 0.0,
-    "part_industrie": 10.8
+    "part_industrie": 10.8,
+    "population_totale": 268
   },
   {
     "CODGEO": "2B049",
@@ -1527,7 +1616,8 @@
     "part_residentiel": 79.0,
     "part_tertiaire": 9.4,
     "part_agriculture": 1.7,
-    "part_industrie": 6.5
+    "part_industrie": 6.5,
+    "population_totale": 2520
   },
   {
     "CODGEO": "2B050",
@@ -1544,7 +1634,8 @@
     "part_residentiel": 43.5,
     "part_tertiaire": 49.1,
     "part_agriculture": 0.0,
-    "part_industrie": 1.7
+    "part_industrie": 1.7,
+    "population_totale": 5766
   },
   {
     "CODGEO": "2B055",
@@ -1561,7 +1652,8 @@
     "part_residentiel": 61.7,
     "part_tertiaire": 24.9,
     "part_agriculture": 13.4,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 116
   },
   {
     "CODGEO": "2B058",
@@ -1578,7 +1670,8 @@
     "part_residentiel": 79.4,
     "part_tertiaire": 10.6,
     "part_agriculture": 0.0,
-    "part_industrie": 3.8
+    "part_industrie": 3.8,
+    "population_totale": 316
   },
   {
     "CODGEO": "2B059",
@@ -1595,7 +1688,8 @@
     "part_residentiel": 72.8,
     "part_tertiaire": 14.0,
     "part_agriculture": 0.0,
-    "part_industrie": 13.2
+    "part_industrie": 13.2,
+    "population_totale": 112
   },
   {
     "CODGEO": "2B074",
@@ -1612,7 +1706,8 @@
     "part_residentiel": 90.9,
     "part_tertiaire": 9.1,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 395
   },
   {
     "CODGEO": "2B077",
@@ -1629,7 +1724,8 @@
     "part_residentiel": 51.4,
     "part_tertiaire": 42.1,
     "part_agriculture": 3.8,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 697
   },
   {
     "CODGEO": "2B079",
@@ -1646,7 +1742,8 @@
     "part_residentiel": 84.3,
     "part_tertiaire": 8.8,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 499
   },
   {
     "CODGEO": "2B080",
@@ -1663,7 +1760,8 @@
     "part_residentiel": 80.3,
     "part_tertiaire": 19.7,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 139
   },
   {
     "CODGEO": "2B083",
@@ -1680,7 +1778,8 @@
     "part_residentiel": 60.2,
     "part_tertiaire": 10.9,
     "part_agriculture": 0.0,
-    "part_industrie": 29.0
+    "part_industrie": 29.0,
+    "population_totale": 154
   },
   {
     "CODGEO": "2B084",
@@ -1697,7 +1796,8 @@
     "part_residentiel": 74.1,
     "part_tertiaire": 20.2,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 244
   },
   {
     "CODGEO": "2B086",
@@ -1714,7 +1814,8 @@
     "part_residentiel": 70.3,
     "part_tertiaire": 17.5,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 185
   },
   {
     "CODGEO": "2B087",
@@ -1731,7 +1832,8 @@
     "part_residentiel": 69.2,
     "part_tertiaire": 26.2,
     "part_agriculture": 0.0,
-    "part_industrie": 1.5
+    "part_industrie": 1.5,
+    "population_totale": 2182
   },
   {
     "CODGEO": "2B093",
@@ -1748,7 +1850,8 @@
     "part_residentiel": 53.3,
     "part_tertiaire": 37.8,
     "part_agriculture": 0.3,
-    "part_industrie": 1.8
+    "part_industrie": 1.8,
+    "population_totale": 901
   },
   {
     "CODGEO": "2B095",
@@ -1765,7 +1868,8 @@
     "part_residentiel": 79.4,
     "part_tertiaire": 7.3,
     "part_agriculture": 0.0,
-    "part_industrie": 13.3
+    "part_industrie": 13.3,
+    "population_totale": 127
   },
   {
     "CODGEO": "2B096",
@@ -1782,7 +1886,8 @@
     "part_residentiel": 51.7,
     "part_tertiaire": 38.2,
     "part_agriculture": 1.9,
-    "part_industrie": 2.5
+    "part_industrie": 2.5,
+    "population_totale": 7549
   },
   {
     "CODGEO": "2B101",
@@ -1799,7 +1904,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 80
   },
   {
     "CODGEO": "2B105",
@@ -1816,7 +1922,8 @@
     "part_residentiel": 97.7,
     "part_tertiaire": 2.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 108
   },
   {
     "CODGEO": "2B113",
@@ -1833,7 +1940,8 @@
     "part_residentiel": 78.0,
     "part_tertiaire": 22.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 56
   },
   {
     "CODGEO": "2B120",
@@ -1850,7 +1958,8 @@
     "part_residentiel": 42.6,
     "part_tertiaire": 43.2,
     "part_agriculture": 0.1,
-    "part_industrie": 10.3
+    "part_industrie": 10.3,
+    "population_totale": 5772
   },
   {
     "CODGEO": "2B121",
@@ -1867,7 +1976,8 @@
     "part_residentiel": 58.4,
     "part_tertiaire": 29.3,
     "part_agriculture": 0.0,
-    "part_industrie": 3.2
+    "part_industrie": 3.2,
+    "population_totale": 373
   },
   {
     "CODGEO": "2B123",
@@ -1884,7 +1994,8 @@
     "part_residentiel": 40.4,
     "part_tertiaire": 38.0,
     "part_agriculture": 1.5,
-    "part_industrie": 15.6
+    "part_industrie": 15.6,
+    "population_totale": 4215
   },
   {
     "CODGEO": "2B124",
@@ -1901,7 +2012,8 @@
     "part_residentiel": 74.5,
     "part_tertiaire": 21.5,
     "part_agriculture": 0.0,
-    "part_industrie": 4.1
+    "part_industrie": 4.1,
+    "population_totale": 207
   },
   {
     "CODGEO": "2B126",
@@ -1918,7 +2030,8 @@
     "part_residentiel": 20.2,
     "part_tertiaire": 11.8,
     "part_agriculture": 0.0,
-    "part_industrie": 68.0
+    "part_industrie": 68.0,
+    "population_totale": 70
   },
   {
     "CODGEO": "2B134",
@@ -1935,7 +2048,8 @@
     "part_residentiel": 46.2,
     "part_tertiaire": 45.4,
     "part_agriculture": 0.0,
-    "part_industrie": 2.0
+    "part_industrie": 2.0,
+    "population_totale": 3224
   },
   {
     "CODGEO": "2B136",
@@ -1952,7 +2066,8 @@
     "part_residentiel": 74.9,
     "part_tertiaire": 18.7,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 149
   },
   {
     "CODGEO": "2B140",
@@ -1969,7 +2084,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 107
   },
   {
     "CODGEO": "2B143",
@@ -1986,7 +2102,8 @@
     "part_residentiel": 41.8,
     "part_tertiaire": 43.5,
     "part_agriculture": 3.6,
-    "part_industrie": 0.4
+    "part_industrie": 0.4,
+    "population_totale": 1104
   },
   {
     "CODGEO": "2B147",
@@ -2003,7 +2120,8 @@
     "part_residentiel": 93.0,
     "part_tertiaire": 7.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 111
   },
   {
     "CODGEO": "2B148",
@@ -2020,7 +2138,8 @@
     "part_residentiel": 42.7,
     "part_tertiaire": 43.3,
     "part_agriculture": 0.0,
-    "part_industrie": 10.8
+    "part_industrie": 10.8,
+    "population_totale": 6036
   },
   {
     "CODGEO": "2B150",
@@ -2037,7 +2156,8 @@
     "part_residentiel": 70.8,
     "part_tertiaire": 17.4,
     "part_agriculture": 6.5,
-    "part_industrie": 0.6
+    "part_industrie": 0.6,
+    "population_totale": 1237
   },
   {
     "CODGEO": "2B152",
@@ -2054,7 +2174,8 @@
     "part_residentiel": 70.3,
     "part_tertiaire": 23.4,
     "part_agriculture": 0.0,
-    "part_industrie": 2.9
+    "part_industrie": 2.9,
+    "population_totale": 848
   },
   {
     "CODGEO": "2B155",
@@ -2071,7 +2192,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 49
   },
   {
     "CODGEO": "2B161",
@@ -2088,7 +2210,8 @@
     "part_residentiel": 84.8,
     "part_tertiaire": 15.2,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 64
   },
   {
     "CODGEO": "2B162",
@@ -2105,7 +2228,8 @@
     "part_residentiel": 78.7,
     "part_tertiaire": 17.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 709
   },
   {
     "CODGEO": "2B166",
@@ -2122,7 +2246,8 @@
     "part_residentiel": 86.1,
     "part_tertiaire": 13.9,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 644
   },
   {
     "CODGEO": "2B167",
@@ -2139,7 +2264,8 @@
     "part_residentiel": 81.2,
     "part_tertiaire": 11.2,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 425
   },
   {
     "CODGEO": "2B168",
@@ -2156,7 +2282,8 @@
     "part_residentiel": 78.7,
     "part_tertiaire": 17.4,
     "part_agriculture": 0.0,
-    "part_industrie": 1.1
+    "part_industrie": 1.1,
+    "population_totale": 2000
   },
   {
     "CODGEO": "2B169",
@@ -2173,7 +2300,8 @@
     "part_residentiel": 52.2,
     "part_tertiaire": 28.5,
     "part_agriculture": 5.4,
-    "part_industrie": 8.0
+    "part_industrie": 8.0,
+    "population_totale": 971
   },
   {
     "CODGEO": "2B170",
@@ -2190,7 +2318,8 @@
     "part_residentiel": 64.9,
     "part_tertiaire": 35.1,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 107
   },
   {
     "CODGEO": "2B173",
@@ -2207,7 +2336,8 @@
     "part_residentiel": 86.6,
     "part_tertiaire": 9.1,
     "part_agriculture": 4.3,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 257
   },
   {
     "CODGEO": "2B176",
@@ -2224,7 +2354,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 76
   },
   {
     "CODGEO": "2B177",
@@ -2241,7 +2372,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 59
   },
   {
     "CODGEO": "2B178",
@@ -2258,7 +2390,8 @@
     "part_residentiel": 66.6,
     "part_tertiaire": 21.9,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 71
   },
   {
     "CODGEO": "2B183",
@@ -2275,7 +2408,8 @@
     "part_residentiel": 76.0,
     "part_tertiaire": 24.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 93
   },
   {
     "CODGEO": "2B184",
@@ -2292,7 +2426,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 93
   },
   {
     "CODGEO": "2B185",
@@ -2309,7 +2444,8 @@
     "part_residentiel": 62.6,
     "part_tertiaire": 33.3,
     "part_agriculture": 1.1,
-    "part_industrie": 0.6
+    "part_industrie": 0.6,
+    "population_totale": 1795
   },
   {
     "CODGEO": "2B187",
@@ -2326,7 +2462,8 @@
     "part_residentiel": 83.7,
     "part_tertiaire": 16.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 131
   },
   {
     "CODGEO": "2B188",
@@ -2343,7 +2480,8 @@
     "part_residentiel": 79.1,
     "part_tertiaire": 13.0,
     "part_agriculture": 0.0,
-    "part_industrie": 7.9
+    "part_industrie": 7.9,
+    "population_totale": 538
   },
   {
     "CODGEO": "2B190",
@@ -2360,7 +2498,8 @@
     "part_residentiel": 73.4,
     "part_tertiaire": 17.6,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 185
   },
   {
     "CODGEO": "2B193",
@@ -2377,7 +2516,8 @@
     "part_residentiel": 84.7,
     "part_tertiaire": 9.6,
     "part_agriculture": 0.0,
-    "part_industrie": 3.1
+    "part_industrie": 3.1,
+    "population_totale": 600
   },
   {
     "CODGEO": "2B195",
@@ -2394,7 +2534,8 @@
     "part_residentiel": 81.4,
     "part_tertiaire": 18.6,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 123
   },
   {
     "CODGEO": "2B199",
@@ -2411,7 +2552,8 @@
     "part_residentiel": 65.6,
     "part_tertiaire": 34.4,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 185
   },
   {
     "CODGEO": "2B201",
@@ -2428,7 +2570,8 @@
     "part_residentiel": 85.7,
     "part_tertiaire": 14.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 197
   },
   {
     "CODGEO": "2B207",
@@ -2445,7 +2588,8 @@
     "part_residentiel": 57.0,
     "part_tertiaire": 32.2,
     "part_agriculture": 0.0,
-    "part_industrie": 8.1
+    "part_industrie": 8.1,
+    "population_totale": 3366
   },
   {
     "CODGEO": "2B213",
@@ -2462,7 +2606,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 59
   },
   {
     "CODGEO": "2B214",
@@ -2479,7 +2624,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 19
   },
   {
     "CODGEO": "2B218",
@@ -2496,7 +2642,8 @@
     "part_residentiel": 89.4,
     "part_tertiaire": 10.6,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 99
   },
   {
     "CODGEO": "2B220",
@@ -2513,7 +2660,8 @@
     "part_residentiel": 80.3,
     "part_tertiaire": 14.2,
     "part_agriculture": 0.0,
-    "part_industrie": 5.5
+    "part_industrie": 5.5,
+    "population_totale": 132
   },
   {
     "CODGEO": "2B223",
@@ -2530,7 +2678,8 @@
     "part_residentiel": 76.2,
     "part_tertiaire": 18.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 496
   },
   {
     "CODGEO": "2B224",
@@ -2547,7 +2696,8 @@
     "part_residentiel": 75.0,
     "part_tertiaire": 17.3,
     "part_agriculture": 0.0,
-    "part_industrie": 4.8
+    "part_industrie": 4.8,
+    "population_totale": 658
   },
   {
     "CODGEO": "2B225",
@@ -2564,7 +2714,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 99
   },
   {
     "CODGEO": "2B226",
@@ -2581,7 +2732,8 @@
     "part_residentiel": 85.4,
     "part_tertiaire": 14.6,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 59
   },
   {
     "CODGEO": "2B229",
@@ -2598,7 +2750,8 @@
     "part_residentiel": 86.9,
     "part_tertiaire": 7.1,
     "part_agriculture": 0.0,
-    "part_industrie": 6.0
+    "part_industrie": 6.0,
+    "population_totale": 349
   },
   {
     "CODGEO": "2B231",
@@ -2615,7 +2768,8 @@
     "part_residentiel": 53.2,
     "part_tertiaire": 32.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 109
   },
   {
     "CODGEO": "2B236",
@@ -2632,7 +2786,8 @@
     "part_residentiel": 79.4,
     "part_tertiaire": 20.6,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 183
   },
   {
     "CODGEO": "2B238",
@@ -2649,7 +2804,8 @@
     "part_residentiel": 44.2,
     "part_tertiaire": 38.5,
     "part_agriculture": 0.0,
-    "part_industrie": 17.3
+    "part_industrie": 17.3,
+    "population_totale": 208
   },
   {
     "CODGEO": "2B242",
@@ -2666,7 +2822,8 @@
     "part_residentiel": 60.7,
     "part_tertiaire": 34.9,
     "part_agriculture": 0.0,
-    "part_industrie": 2.2
+    "part_industrie": 2.2,
+    "population_totale": 699
   },
   {
     "CODGEO": "2B246",
@@ -2683,7 +2840,8 @@
     "part_residentiel": 72.8,
     "part_tertiaire": 21.5,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 191
   },
   {
     "CODGEO": "2B250",
@@ -2700,7 +2858,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 149
   },
   {
     "CODGEO": "2B251",
@@ -2717,7 +2876,8 @@
     "part_residentiel": 63.6,
     "part_tertiaire": 28.4,
     "part_agriculture": 0.2,
-    "part_industrie": 1.4
+    "part_industrie": 1.4,
+    "population_totale": 3719
   },
   {
     "CODGEO": "2B252",
@@ -2734,7 +2894,8 @@
     "part_residentiel": 90.9,
     "part_tertiaire": 9.1,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 181
   },
   {
     "CODGEO": "2B257",
@@ -2751,7 +2912,8 @@
     "part_residentiel": 88.5,
     "part_tertiaire": 11.5,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 160
   },
   {
     "CODGEO": "2B261",
@@ -2768,7 +2930,8 @@
     "part_residentiel": 60.4,
     "part_tertiaire": 29.0,
     "part_agriculture": 0.0,
-    "part_industrie": 5.1
+    "part_industrie": 5.1,
+    "population_totale": 538
   },
   {
     "CODGEO": "2B263",
@@ -2785,7 +2948,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 69
   },
   {
     "CODGEO": "2B265",
@@ -2802,7 +2966,8 @@
     "part_residentiel": 89.8,
     "part_tertiaire": 10.2,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 413
   },
   {
     "CODGEO": "2B267",
@@ -2819,7 +2984,8 @@
     "part_residentiel": 67.2,
     "part_tertiaire": 32.8,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 45
   },
   {
     "CODGEO": "2B274",
@@ -2836,7 +3002,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 90
   },
   {
     "CODGEO": "2B277",
@@ -2853,7 +3020,8 @@
     "part_residentiel": 90.6,
     "part_tertiaire": 9.4,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 334
   },
   {
     "CODGEO": "2B280",
@@ -2870,7 +3038,8 @@
     "part_residentiel": 82.0,
     "part_tertiaire": 18.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 106
   },
   {
     "CODGEO": "2B281",
@@ -2887,7 +3056,8 @@
     "part_residentiel": 76.8,
     "part_tertiaire": 16.2,
     "part_agriculture": 0.0,
-    "part_industrie": 2.2
+    "part_industrie": 2.2,
+    "population_totale": 1151
   },
   {
     "CODGEO": "2B283",
@@ -2904,7 +3074,8 @@
     "part_residentiel": 76.1,
     "part_tertiaire": 13.4,
     "part_agriculture": 0.0,
-    "part_industrie": 3.8
+    "part_industrie": 3.8,
+    "population_totale": 730
   },
   {
     "CODGEO": "2B287",
@@ -2921,7 +3092,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 142
   },
   {
     "CODGEO": "2B290",
@@ -2938,7 +3110,8 @@
     "part_residentiel": 24.4,
     "part_tertiaire": 74.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 277
   },
   {
     "CODGEO": "2B298",
@@ -2955,7 +3128,8 @@
     "part_residentiel": 50.2,
     "part_tertiaire": 37.1,
     "part_agriculture": 0.7,
-    "part_industrie": 6.6
+    "part_industrie": 6.6,
+    "population_totale": 1688
   },
   {
     "CODGEO": "2B302",
@@ -2972,7 +3146,8 @@
     "part_residentiel": 67.3,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 32.7
+    "part_industrie": 32.7,
+    "population_totale": 88
   },
   {
     "CODGEO": "2B303",
@@ -2989,7 +3164,8 @@
     "part_residentiel": 37.6,
     "part_tertiaire": 51.8,
     "part_agriculture": 0.0,
-    "part_industrie": 7.8
+    "part_industrie": 7.8,
+    "population_totale": 758
   },
   {
     "CODGEO": "2B305",
@@ -3006,7 +3182,8 @@
     "part_residentiel": 78.1,
     "part_tertiaire": 16.5,
     "part_agriculture": 0.0,
-    "part_industrie": 3.7
+    "part_industrie": 3.7,
+    "population_totale": 2920
   },
   {
     "CODGEO": "2B306",
@@ -3023,7 +3200,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 118
   },
   {
     "CODGEO": "2B307",
@@ -3040,7 +3218,8 @@
     "part_residentiel": 79.8,
     "part_tertiaire": 14.5,
     "part_agriculture": 0.0,
-    "part_industrie": 3.0
+    "part_industrie": 3.0,
+    "population_totale": 1519
   },
   {
     "CODGEO": "2B309",
@@ -3057,7 +3236,8 @@
     "part_residentiel": 86.9,
     "part_tertiaire": 9.5,
     "part_agriculture": 0.0,
-    "part_industrie": 1.6
+    "part_industrie": 1.6,
+    "population_totale": 1971
   },
   {
     "CODGEO": "2B311",
@@ -3074,7 +3254,8 @@
     "part_residentiel": 61.0,
     "part_tertiaire": 33.6,
     "part_agriculture": 2.6,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 787
   },
   {
     "CODGEO": "2B313",
@@ -3091,7 +3272,8 @@
     "part_residentiel": 52.2,
     "part_tertiaire": 39.3,
     "part_agriculture": 0.0,
-    "part_industrie": 4.6
+    "part_industrie": 4.6,
+    "population_totale": 2037
   },
   {
     "CODGEO": "2B314",
@@ -3108,7 +3290,8 @@
     "part_residentiel": 71.7,
     "part_tertiaire": 12.7,
     "part_agriculture": 5.0,
-    "part_industrie": 4.3
+    "part_industrie": 4.3,
+    "population_totale": 338
   },
   {
     "CODGEO": "2B315",
@@ -3125,7 +3308,8 @@
     "part_residentiel": 90.4,
     "part_tertiaire": 9.6,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 284
   },
   {
     "CODGEO": "2B316",
@@ -3142,7 +3326,8 @@
     "part_residentiel": 82.1,
     "part_tertiaire": 15.8,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 1000
   },
   {
     "CODGEO": "2B318",
@@ -3159,7 +3344,8 @@
     "part_residentiel": 44.9,
     "part_tertiaire": 47.9,
     "part_agriculture": 0.0,
-    "part_industrie": 5.7
+    "part_industrie": 5.7,
+    "population_totale": 581
   },
   {
     "CODGEO": "2B319",
@@ -3176,7 +3362,8 @@
     "part_residentiel": 85.0,
     "part_tertiaire": 12.8,
     "part_agriculture": 0.0,
-    "part_industrie": 2.2
+    "part_industrie": 2.2,
+    "population_totale": 811
   },
   {
     "CODGEO": "2B320",
@@ -3193,7 +3380,8 @@
     "part_residentiel": 52.0,
     "part_tertiaire": 10.5,
     "part_agriculture": 25.3,
-    "part_industrie": 3.6
+    "part_industrie": 3.6,
+    "population_totale": 283
   },
   {
     "CODGEO": "2B328",
@@ -3210,7 +3398,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 97
   },
   {
     "CODGEO": "2B334",
@@ -3227,7 +3416,8 @@
     "part_residentiel": 89.2,
     "part_tertiaire": 10.8,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 107
   },
   {
     "CODGEO": "2B341",
@@ -3244,7 +3434,8 @@
     "part_residentiel": 76.8,
     "part_tertiaire": 17.1,
     "part_agriculture": 0.0,
-    "part_industrie": 3.6
+    "part_industrie": 3.6,
+    "population_totale": 690
   },
   {
     "CODGEO": "2B342",
@@ -3261,7 +3452,8 @@
     "part_residentiel": 76.5,
     "part_tertiaire": 17.7,
     "part_agriculture": 0.0,
-    "part_industrie": 2.1
+    "part_industrie": 2.1,
+    "population_totale": 2520
   },
   {
     "CODGEO": "2B343",
@@ -3278,7 +3470,8 @@
     "part_residentiel": 51.9,
     "part_tertiaire": 23.2,
     "part_agriculture": 5.1,
-    "part_industrie": 18.1
+    "part_industrie": 18.1,
+    "population_totale": 1795
   },
   {
     "CODGEO": "2B346",
@@ -3295,7 +3488,8 @@
     "part_residentiel": 69.2,
     "part_tertiaire": 15.1,
     "part_agriculture": 3.5,
-    "part_industrie": 8.5
+    "part_industrie": 8.5,
+    "population_totale": 3032
   },
   {
     "CODGEO": "2B347",
@@ -3312,7 +3506,8 @@
     "part_residentiel": 83.6,
     "part_tertiaire": 10.9,
     "part_agriculture": 0.0,
-    "part_industrie": 1.9
+    "part_industrie": 1.9,
+    "population_totale": 268
   },
   {
     "CODGEO": "2B352",
@@ -3329,7 +3524,8 @@
     "part_residentiel": 88.6,
     "part_tertiaire": 6.4,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 207
   },
   {
     "CODGEO": "2B353",
@@ -3346,7 +3542,8 @@
     "part_residentiel": 89.2,
     "part_tertiaire": 9.8,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 3278
   },
   {
     "CODGEO": "2B354",
@@ -3363,7 +3560,8 @@
     "part_residentiel": 43.4,
     "part_tertiaire": 53.1,
     "part_agriculture": 0.0,
-    "part_industrie": 3.5
+    "part_industrie": 3.5,
+    "population_totale": 428
   },
   {
     "CODGEO": "2B355",
@@ -3380,7 +3578,8 @@
     "part_residentiel": 80.9,
     "part_tertiaire": 19.1,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 352
   },
   {
     "CODGEO": "2B364",
@@ -3397,7 +3596,8 @@
     "part_residentiel": 100.0,
     "part_tertiaire": 0.0,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 36
   },
   {
     "CODGEO": "2B365",
@@ -3414,7 +3614,8 @@
     "part_residentiel": 89.6,
     "part_tertiaire": 10.4,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 102
   },
   {
     "CODGEO": "2B366",
@@ -3431,6 +3632,7 @@
     "part_residentiel": 87.7,
     "part_tertiaire": 12.3,
     "part_agriculture": 0.0,
-    "part_industrie": 0.0
+    "part_industrie": 0.0,
+    "population_totale": 104
   }
 ]
