@@ -217,6 +217,35 @@ function App() {
     ].filter(d => d.value > 0);
   }, [activeTab]);
 
+  // --- DONNÉES HISTOGRAMME INÉGALITÉS SPORTIVES ---
+  const sportDistributionData = useMemo(() => {
+    if (activeTab !== 'sport') return [];
+    
+    // Définir les tranches
+    const ranges = [
+      { label: '0', min: 0, max: 0 },
+      { label: '1-2', min: 1, max: 2 },
+      { label: '3-5', min: 3, max: 5 },
+      { label: '6-10', min: 6, max: 10 },
+      { label: '11-20', min: 11, max: 20 },
+      { label: '20+', min: 21, max: Infinity }
+    ];
+    
+    // Compter les villes par tranche
+    return ranges.map(range => {
+      const count = filteredCities.filter(city => {
+        const equip = city.nb_equipements || 0;
+        return equip >= range.min && equip <= range.max;
+      }).length;
+      
+      return {
+        name: range.label,
+        value: count,
+        fill: range.min === 0 ? '#ef4444' : range.min >= 11 ? '#4ade80' : '#38bdf8'
+      };
+    });
+  }, [activeTab, filteredCities]);
+
   return (
     <div className="min-h-screen bg-dark-900 text-slate-200 p-4 md:p-8 font-sans transition-colors duration-500">
       
@@ -601,75 +630,140 @@ function App() {
                 </div>
               </div>
             ) : (
-              // --- GRAPHIQUE SPORT (SCATTER) ---
-              <ResponsiveContainer width="100%" height="100%">
-                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 60 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
-                  <XAxis
-                    type="number"
-                    dataKey="population_15_29"
-                    name="Population"
-                    stroke="#94a3b8"
-                    tick={{ fill: '#94a3b8' }}
-                  >
-                    <Label
-                      value={config.xLabel}
-                      offset={-10}
-                      position="insideBottom"
-                      style={{ fill: '#cbd5e1', fontSize: '12px' }}
+              // --- SPORT : SCATTER + HISTOGRAMME INÉGALITÉS ---
+              <div className="h-full flex flex-col gap-4">
+                {/* HAUT : SCATTER CHART */}
+                <div className="h-1/2 min-h-0">
+                  <p className="text-xs text-slate-400 mb-2">Corrélation Population Jeune / Équipements</p>
+                  <ResponsiveContainer width="100%" height="90%">
+                    <ScatterChart margin={{ top: 10, right: 20, bottom: 20, left: 50 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                      <XAxis
+                        type="number"
+                        dataKey="population_15_29"
+                        name="Population"
+                        stroke="#94a3b8"
+                        tick={{ fill: '#94a3b8', fontSize: 10 }}
+                      >
+                        <Label
+                          value="Population (15-29 ans)"
+                          offset={-10}
+                          position="insideBottom"
+                          style={{ fill: '#cbd5e1', fontSize: '11px' }}
+                        />
+                      </XAxis>
+                      <YAxis
+                        type="number"
+                        dataKey="nb_equipements"
+                        name="Y"
+                        stroke="#94a3b8"
+                        tick={{ fill: '#94a3b8', fontSize: 10 }}
+                      >
+                        <Label
+                          value="Équipements"
+                          angle={-90}
+                          position="insideLeft"
+                          dx={-5}
+                          style={{ fill: '#cbd5e1', fontSize: '11px', textAnchor: 'middle' }}
+                        />
+                      </YAxis>
+                      <RechartsTooltip
+                        cursor={{ strokeDasharray: '3 3' }}
+                        contentStyle={{ 
+                          backgroundColor: '#0f172a', 
+                          borderColor: '#334155', 
+                          borderRadius: '0.5rem',
+                          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                        }}
+                        content={({ active, payload }) => {
+                          if (active && payload && payload.length) {
+                            const data = payload[0].payload;
+                            return (
+                              <div className="bg-dark-900 border border-dark-700 rounded-lg p-3 shadow-xl">
+                                <p className="text-white font-bold mb-2">{data.nom}</p>
+                                <p className="text-slate-300 text-sm">
+                                  <span className="text-slate-400">Population (15-29 ans) : </span>
+                                  {data.population_15_29?.toLocaleString()}
+                                </p>
+                                <p className="text-slate-300 text-sm">
+                                  <span className="text-slate-400">Équipements : </span>
+                                  <span style={{ color: '#c084fc' }}>{data.nb_equipements?.toLocaleString()}</span>
+                                </p>
+                              </div>
+                            );
+                          }
+                          return null;
+                        }}
                       />
-                    </XAxis>
-                    <YAxis
-                      type="number"
-                      dataKey="nb_equipements"
-                      name="Y"
-                      stroke="#94a3b8"
-                      tick={{ fill: '#94a3b8' }}
-                    >
-                      <Label
-                        value={config.yLabel}
-                        angle={-90}
-                        position="insideLeft"
-                        dx={-10}
-                        style={{ fill: '#cbd5e1', fontSize: '12px', textAnchor: 'middle' }}
+                      <Scatter
+                        name="Communes"
+                        data={filteredCities}
+                        fill="#c084fc"
+                        fillOpacity={0.7}
                       />
-                    </YAxis>
-                    <RechartsTooltip
-                      cursor={{ strokeDasharray: '3 3' }}
-                      contentStyle={{ 
-                        backgroundColor: '#0f172a', 
-                        borderColor: '#334155', 
-                        borderRadius: '0.5rem',
-                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
-                      }}
-                      content={({ active, payload }) => {
-                        if (active && payload && payload.length) {
-                          const data = payload[0].payload;
-                          return (
-                            <div className="bg-dark-900 border border-dark-700 rounded-lg p-3 shadow-xl">
-                              <p className="text-white font-bold mb-2">{data.nom}</p>
-                              <p className="text-slate-300 text-sm">
-                                <span className="text-slate-400">Population (15-29 ans) : </span>
-                                {data.population_15_29?.toLocaleString()}
-                              </p>
-                              <p className="text-slate-300 text-sm">
-                                <span className="text-slate-400">Équipements : </span>
-                                <span style={{ color: config.sec }}>{data.nb_equipements?.toLocaleString()}</span>
-                              </p>
-                            </div>
-                          );
-                        }
-                        return null;
-                      }}
-                    />
-                    <Scatter
-                      name="Communes"
-                      data={filteredCities}
-                      fill={config.sec}
-                      fillOpacity={0.7}
-                    />
-                  </ScatterChart>
-              </ResponsiveContainer>
+                    </ScatterChart>
+                  </ResponsiveContainer>
+                </div>
+
+                {/* BAS : HISTOGRAMME INÉGALITÉS */}
+                <div className="h-1/2 min-h-0 border-t border-dark-700 pt-2">
+                  <p className="text-xs text-slate-400 mb-2">Répartition des communes par nombre d'équipements</p>
+                  <ResponsiveContainer width="100%" height="90%">
+                    <BarChart data={sportDistributionData} margin={{ top: 10, right: 20, bottom: 20, left: 10 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                      <XAxis 
+                        dataKey="name" 
+                        stroke="#94a3b8" 
+                        tick={{ fill: '#94a3b8', fontSize: 11 }}
+                      >
+                        <Label
+                          value="Nb d'équipements"
+                          offset={-10}
+                          position="insideBottom"
+                          style={{ fill: '#cbd5e1', fontSize: '11px' }}
+                        />
+                      </XAxis>
+                      <YAxis 
+                        stroke="#94a3b8" 
+                        tick={{ fill: '#94a3b8', fontSize: 10 }}
+                      >
+                        <Label
+                          value="Nb de communes"
+                          angle={-90}
+                          position="insideLeft"
+                          dx={5}
+                          style={{ fill: '#cbd5e1', fontSize: '11px', textAnchor: 'middle' }}
+                        />
+                      </YAxis>
+                      <RechartsTooltip
+                        contentStyle={{ 
+                          backgroundColor: '#0f172a', 
+                          borderColor: '#334155', 
+                          borderRadius: '0.5rem',
+                          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                        }}
+                        labelStyle={{ color: '#38bdf8', fontWeight: 'bold' }}
+                        itemStyle={{ color: '#e2e8f0' }}
+                        formatter={(value, name, props) => {
+                          const label = props.payload.name === '0' ? 'Déserts sportifs' : 
+                                       props.payload.name === '20+' ? 'Communes bien équipées' : 'Communes';
+                          return [`${value} ${label.toLowerCase()}`, 'Équipements: ' + props.payload.name];
+                        }}
+                        cursor={{ fill: '#1e293b', opacity: 0.5 }}
+                      />
+                      <Bar 
+                        dataKey="value" 
+                        name="Communes" 
+                        radius={[4, 4, 0, 0]}
+                      >
+                        {sportDistributionData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.fill} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
             )}
           </div>
         </div>
