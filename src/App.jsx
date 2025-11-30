@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
-import { ScatterChart, Scatter, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, ZAxis, Label } from 'recharts';
+import { ScatterChart, Scatter, BarChart, Bar, PieChart, Pie, Cell, Legend, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, ZAxis, Label } from 'recharts';
 import { Activity, Users, MapPin, Trophy, Zap, Home, Building2, Flame, AlertTriangle, Calendar } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 
@@ -158,6 +158,39 @@ function App() {
       .sort((a, b) => b.totalSurface - a.totalSurface)
       .slice(0, 5);
   }, [activeTab, filteredFires]);
+
+  // --- DONNÉES PIE CHART (ÉNERGIE) ---
+  const energyPieData = useMemo(() => {
+    if (activeTab !== 'energy') return [];
+    
+    // On calcule la somme pondérée des consommations par secteur
+    const stats = {
+      residentiel: 0,
+      tertiaire: 0,
+      industrie: 0,
+      agriculture: 0
+    };
+    
+    dataCities.forEach(city => {
+      if (city.consototale > 0) {
+        const total = city.consototale;
+        stats.residentiel += total * (city.part_residentiel || 0) / 100;
+        stats.tertiaire += total * (city.part_tertiaire || 0) / 100;
+        stats.industrie += total * (city.part_industrie || 0) / 100;
+        stats.agriculture += total * (city.part_agriculture || 0) / 100;
+      }
+    });
+
+    const grandTotal = stats.residentiel + stats.tertiaire + stats.industrie + stats.agriculture;
+    if (grandTotal === 0) return [];
+
+    return [
+      { name: 'Résidentiel', value: Math.round(stats.residentiel / grandTotal * 100), color: '#4ade80' },
+      { name: 'Tertiaire', value: Math.round(stats.tertiaire / grandTotal * 100), color: '#facc15' },
+      { name: 'Industrie', value: Math.round(stats.industrie / grandTotal * 100), color: '#f87171' },
+      { name: 'Agriculture', value: Math.round(stats.agriculture / grandTotal * 100), color: '#60a5fa' }
+    ].filter(d => d.value > 0);
+  }, [activeTab]);
 
   return (
     <div className="min-h-screen bg-dark-900 text-slate-200 p-4 md:p-8 font-sans transition-colors duration-500">
@@ -365,107 +398,217 @@ function App() {
           </div>
 
           <div className="flex-1">
-            <ResponsiveContainer width="100%" height="100%">
-              {activeTab === 'fire' ? (
-                // --- GRAPHIQUE INCENDIES (BARRES) ---
-                <BarChart data={fireHistoryData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
-                  <XAxis dataKey="name" stroke="#94a3b8" tick={{ fill: '#94a3b8' }} />
-                  <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8' }} label={{ value: 'Surface (ha)', angle: -90, position: 'insideLeft', fill: '#64748b' }} />
-                  <RechartsTooltip
-                    contentStyle={{
-                      backgroundColor: '#0f172a',
-                      borderColor: '#334155',
-                      borderRadius: '0.5rem',
-                      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
-                    }}
-                    labelStyle={{
-                      color: config.theme,
-                      fontWeight: 'bold',
-                      marginBottom: '0.25rem'
-                    }}
-                    itemStyle={{
-                      color: '#e2e8f0'
-                    }}
-                    cursor={{ fill: '#1e293b', opacity: 0.5 }}
-                  />
-                  <Bar dataKey="value" name="Surface brûlée (ha)" fill="#ef4444" radius={[4, 4, 0, 0]} />
-                </BarChart>
-              ) : (
-                // --- GRAPHIQUE SPORT & ENERGIE (SCATTER) ---
-                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 60 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
-                  <XAxis
-                    type="number"
-                    dataKey={activeTab === 'sport' ? 'population_15_29' : 'population_totale'}
-                    name="Population"
-                    stroke="#94a3b8"
-                    tick={{ fill: '#94a3b8' }}
-                  >
-                    <Label
-                      value={config.xLabel}
-                      offset={-10}
-                      position="insideBottom"
-                      style={{ fill: '#cbd5e1', fontSize: '12px' }}
-                    />
-                  </XAxis>
-                  <YAxis
-                    type="number"
-                    dataKey={activeTab === 'sport' ? 'nb_equipements' : energyMetric}
-                    name="Y"
-                    stroke="#94a3b8"
-                    tick={{ fill: '#94a3b8' }}
-                  >
-                    <Label
-                      value={config.yLabel}
-                      angle={-90}
-                      position="insideLeft"
-                      dx={-10}
-                      style={{ fill: '#cbd5e1', fontSize: '12px', textAnchor: 'middle' }}
-                    />
-                  </YAxis>
+            {activeTab === 'energy' ? (
+              // --- ÉNERGIE : SCATTER + PIE CHART CÔTE À CÔTE ---
+              <div className="flex flex-col lg:flex-row gap-4 h-full">
+                {/* Scatter Chart */}
+                <div className="flex-1 min-h-[250px]">
+                  <p className="text-xs text-slate-400 mb-2 text-center">Corrélation Population / Consommation</p>
+                  <ResponsiveContainer width="100%" height="90%">
+                    <ScatterChart margin={{ top: 10, right: 20, bottom: 20, left: 60 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                      <XAxis
+                        type="number"
+                        dataKey="population_totale"
+                        name="Population"
+                        stroke="#94a3b8"
+                        tick={{ fill: '#94a3b8', fontSize: 10 }}
+                      >
+                        <Label
+                          value="Population"
+                          offset={-10}
+                          position="insideBottom"
+                          style={{ fill: '#cbd5e1', fontSize: '11px' }}
+                        />
+                      </XAxis>
+                      <YAxis
+                        type="number"
+                        dataKey={energyMetric}
+                        name="Y"
+                        stroke="#94a3b8"
+                        tick={{ fill: '#94a3b8', fontSize: 10 }}
+                      >
+                        <Label
+                          value={config.yLabel}
+                          angle={-90}
+                          position="insideLeft"
+                          dx={-10}
+                          style={{ fill: '#cbd5e1', fontSize: '11px', textAnchor: 'middle' }}
+                        />
+                      </YAxis>
+                      <RechartsTooltip
+                        cursor={{ strokeDasharray: '3 3' }}
+                        contentStyle={{ 
+                          backgroundColor: '#0f172a', 
+                          borderColor: '#334155', 
+                          borderRadius: '0.5rem',
+                          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                        }}
+                        content={({ active, payload }) => {
+                          if (active && payload && payload.length) {
+                            const data = payload[0].payload;
+                            const yValue = data[energyMetric];
+                            const yLabel = energyMetric === 'consototale' ? 'Consommation (MWh)' : 'Part (%)';
+                            return (
+                              <div className="bg-dark-900 border border-dark-700 rounded-lg p-3 shadow-xl">
+                                <p className="text-white font-bold mb-2">{data.nom}</p>
+                                <p className="text-slate-300 text-sm">
+                                  <span className="text-slate-400">Population : </span>
+                                  {data.population_totale?.toLocaleString()}
+                                </p>
+                                <p className="text-slate-300 text-sm">
+                                  <span className="text-slate-400">{yLabel} : </span>
+                                  <span style={{ color: config.sec }}>{typeof yValue === 'number' ? yValue.toLocaleString() : yValue}</span>
+                                </p>
+                              </div>
+                            );
+                          }
+                          return null;
+                        }}
+                      />
+                      <Scatter name="Communes" data={dataCities} fill={config.sec} fillOpacity={0.7} />
+                    </ScatterChart>
+                  </ResponsiveContainer>
+                </div>
 
-                  <RechartsTooltip
-                    cursor={{ strokeDasharray: '3 3' }}
-                    contentStyle={{ 
-                      backgroundColor: '#0f172a', 
-                      borderColor: '#334155', 
-                      borderRadius: '0.5rem',
-                      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
-                    }}
-                    content={({ active, payload }) => {
-                      if (active && payload && payload.length) {
-                        const data = payload[0].payload;
-                        const yValue = activeTab === 'sport' ? data.nb_equipements : data[energyMetric];
-                        const yLabel = activeTab === 'sport' ? 'Équipements' : (energyMetric === 'consototale' ? 'Consommation (MWh)' : 'Part (%)');
-                        const popValue = activeTab === 'sport' ? data.population_15_29 : data.population_totale;
-                        const popLabel = activeTab === 'sport' ? 'Population (15-29 ans)' : 'Population';
-                        return (
-                          <div className="bg-dark-900 border border-dark-700 rounded-lg p-3 shadow-xl">
-                            <p className="text-white font-bold mb-2">{data.nom}</p>
-                            <p className="text-slate-300 text-sm">
-                              <span className="text-slate-400">{popLabel} : </span>
-                              {popValue?.toLocaleString()}
-                            </p>
-                            <p className="text-slate-300 text-sm">
-                              <span className="text-slate-400">{yLabel} : </span>
-                              <span style={{ color: config.sec }}>{typeof yValue === 'number' ? yValue.toLocaleString() : yValue}</span>
-                            </p>
-                          </div>
-                        );
-                      }
-                      return null;
-                    }}
-                  />
-                  <Scatter
-                    name="Communes"
-                    data={activeTab === 'sport' ? filteredCities : dataCities}
-                    fill={config.sec}
-                    fillOpacity={0.7}
-                  />
-                </ScatterChart>
-              )}
-            </ResponsiveContainer>
+                {/* Donut Chart */}
+                <div className="flex-1 min-h-[250px]">
+                  <p className="text-xs text-slate-400 mb-2 text-center">Répartition par secteur (Corse entière)</p>
+                  <ResponsiveContainer width="100%" height="90%">
+                    <PieChart>
+                      <Pie
+                        data={energyPieData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={60}
+                        outerRadius={90}
+                        paddingAngle={3}
+                        dataKey="value"
+                        labelLine={false}
+                        label={({ name, value }) => `${value}%`}
+                      >
+                        {energyPieData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} stroke={entry.color} />
+                        ))}
+                      </Pie>
+                      <Legend 
+                        verticalAlign="bottom" 
+                        height={36}
+                        formatter={(value) => <span className="text-slate-300 text-xs">{value}</span>}
+                      />
+                      <RechartsTooltip
+                        contentStyle={{ 
+                          backgroundColor: '#0f172a', 
+                          borderColor: '#334155', 
+                          borderRadius: '0.5rem',
+                          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                        }}
+                        formatter={(value, name) => [`${value}%`, name]}
+                        labelStyle={{ color: '#fff' }}
+                        itemStyle={{ color: '#e2e8f0' }}
+                      />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            ) : (
+              <ResponsiveContainer width="100%" height="100%">
+                {activeTab === 'fire' ? (
+                  // --- GRAPHIQUE INCENDIES (BARRES) ---
+                  <BarChart data={fireHistoryData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                    <XAxis dataKey="name" stroke="#94a3b8" tick={{ fill: '#94a3b8' }} />
+                    <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8' }} label={{ value: 'Surface (ha)', angle: -90, position: 'insideLeft', fill: '#64748b' }} />
+                    <RechartsTooltip
+                      contentStyle={{
+                        backgroundColor: '#0f172a',
+                        borderColor: '#334155',
+                        borderRadius: '0.5rem',
+                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                      }}
+                      labelStyle={{
+                        color: config.theme,
+                        fontWeight: 'bold',
+                        marginBottom: '0.25rem'
+                      }}
+                      itemStyle={{
+                        color: '#e2e8f0'
+                      }}
+                      cursor={{ fill: '#1e293b', opacity: 0.5 }}
+                    />
+                    <Bar dataKey="value" name="Surface brûlée (ha)" fill="#ef4444" radius={[4, 4, 0, 0]} />
+                  </BarChart>
+                ) : (
+                  // --- GRAPHIQUE SPORT (SCATTER) ---
+                  <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 60 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                    <XAxis
+                      type="number"
+                      dataKey="population_15_29"
+                      name="Population"
+                      stroke="#94a3b8"
+                      tick={{ fill: '#94a3b8' }}
+                    >
+                      <Label
+                        value={config.xLabel}
+                        offset={-10}
+                        position="insideBottom"
+                        style={{ fill: '#cbd5e1', fontSize: '12px' }}
+                      />
+                    </XAxis>
+                    <YAxis
+                      type="number"
+                      dataKey="nb_equipements"
+                      name="Y"
+                      stroke="#94a3b8"
+                      tick={{ fill: '#94a3b8' }}
+                    >
+                      <Label
+                        value={config.yLabel}
+                        angle={-90}
+                        position="insideLeft"
+                        dx={-10}
+                        style={{ fill: '#cbd5e1', fontSize: '12px', textAnchor: 'middle' }}
+                      />
+                    </YAxis>
+                    <RechartsTooltip
+                      cursor={{ strokeDasharray: '3 3' }}
+                      contentStyle={{ 
+                        backgroundColor: '#0f172a', 
+                        borderColor: '#334155', 
+                        borderRadius: '0.5rem',
+                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                      }}
+                      content={({ active, payload }) => {
+                        if (active && payload && payload.length) {
+                          const data = payload[0].payload;
+                          return (
+                            <div className="bg-dark-900 border border-dark-700 rounded-lg p-3 shadow-xl">
+                              <p className="text-white font-bold mb-2">{data.nom}</p>
+                              <p className="text-slate-300 text-sm">
+                                <span className="text-slate-400">Population (15-29 ans) : </span>
+                                {data.population_15_29?.toLocaleString()}
+                              </p>
+                              <p className="text-slate-300 text-sm">
+                                <span className="text-slate-400">Équipements : </span>
+                                <span style={{ color: config.sec }}>{data.nb_equipements?.toLocaleString()}</span>
+                              </p>
+                            </div>
+                          );
+                        }
+                        return null;
+                      }}
+                    />
+                    <Scatter
+                      name="Communes"
+                      data={filteredCities}
+                      fill={config.sec}
+                      fillOpacity={0.7}
+                    />
+                  </ScatterChart>
+                )}
+              </ResponsiveContainer>
+            )}
           </div>
         </div>
 
