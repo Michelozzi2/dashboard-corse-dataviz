@@ -61,7 +61,7 @@ function App() {
         mapData: dataCities, type: 'city',
         radius: (d) => Math.max(3, Math.min(Math.sqrt(d.consototale) / 10, 30)),
         title: 'Intensité Énergétique',
-        xLabel: 'Population Jeune (Proxy taille)',
+        xLabel: 'Population',
         yLabel: 'Consommation / Part (%)'
       };
       case 'fire': return {
@@ -440,6 +440,48 @@ function App() {
         </div>
 
       </div>
+
+      {/* SOURCES */}
+      <footer className="mt-8 pt-6 border-t border-dark-700">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500">
+          <span className="font-semibold text-slate-400">Sources :</span>
+          <a 
+            href="https://www.data.gouv.fr/datasets/consommation-annuelle-delectricite-et-gaz-par-commune-et-par-secteur-dactivite/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-amber-400 transition-colors"
+          >
+            data.gouv.fr (Énergie)
+          </a>
+          <span className="text-dark-600">•</span>
+          <a 
+            href="https://www.data.gouv.fr/datasets/recensement-des-equipements-sportifs-espaces-et-sites-de-pratiques/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-neon-blue transition-colors"
+          >
+            data.gouv.fr (Équipements sportifs)
+          </a>
+          <span className="text-dark-600">•</span>
+          <a 
+            href="https://www.insee.fr/fr/statistiques/8202264?sommaire=8202287#consulter" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-neon-purple transition-colors"
+          >
+            INSEE (Population)
+          </a>
+          <span className="text-dark-600">•</span>
+          <a 
+            href="https://bdiff.agriculture.gouv.fr/incendies" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-red-500 transition-colors"
+          >
+            BDIFF (Incendies)
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
