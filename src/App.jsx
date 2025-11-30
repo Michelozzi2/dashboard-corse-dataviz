@@ -392,7 +392,7 @@ function App() {
                 </BarChart>
               ) : (
                 // --- GRAPHIQUE SPORT & ENERGIE (SCATTER) ---
-                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 10 }}>
+                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 60 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
                   <XAxis
                     type="number"
@@ -419,13 +419,40 @@ function App() {
                       value={config.yLabel}
                       angle={-90}
                       position="insideLeft"
+                      dx={-10}
                       style={{ fill: '#cbd5e1', fontSize: '12px', textAnchor: 'middle' }}
                     />
                   </YAxis>
 
                   <RechartsTooltip
                     cursor={{ strokeDasharray: '3 3' }}
-                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', color: '#fff' }}
+                    contentStyle={{ 
+                      backgroundColor: '#0f172a', 
+                      borderColor: '#334155', 
+                      borderRadius: '0.5rem',
+                      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                    }}
+                    content={({ active, payload }) => {
+                      if (active && payload && payload.length) {
+                        const data = payload[0].payload;
+                        const yValue = activeTab === 'sport' ? data.nb_equipements : data[energyMetric];
+                        const yLabel = activeTab === 'sport' ? 'Équipements' : (energyMetric === 'consototale' ? 'Consommation (MWh)' : 'Part (%)');
+                        return (
+                          <div className="bg-dark-900 border border-dark-700 rounded-lg p-3 shadow-xl">
+                            <p className="text-white font-bold mb-2">{data.nom}</p>
+                            <p className="text-slate-300 text-sm">
+                              <span className="text-slate-400">Population : </span>
+                              {data.population_15_29?.toLocaleString()}
+                            </p>
+                            <p className="text-slate-300 text-sm">
+                              <span className="text-slate-400">{yLabel} : </span>
+                              <span style={{ color: config.sec }}>{typeof yValue === 'number' ? yValue.toLocaleString() : yValue}</span>
+                            </p>
+                          </div>
+                        );
+                      }
+                      return null;
+                    }}
                   />
                   <Scatter
                     name="Communes"
