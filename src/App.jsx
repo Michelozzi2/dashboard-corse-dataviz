@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
-import { ScatterChart, Scatter, BarChart, Bar, PieChart, Pie, Cell, Legend, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, ZAxis, Label } from 'recharts';
+import { ScatterChart, Scatter, BarChart, Bar, PieChart, Pie, Cell, Legend, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, ZAxis, Label, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Brush } from 'recharts';
 import { Activity, Users, MapPin, Trophy, Zap, Home, Building2, Flame, AlertTriangle, Calendar } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 
@@ -140,6 +140,31 @@ function App() {
     return Object.keys(history).sort().map(year => ({
       name: year,
       value: Math.round(history[year])
+    }));
+  }, [activeTab, filteredFires]);
+
+  // --- CALCUL SAISONNALITÉ (RADAR CHART) ---
+  const fireSeasonalityData = useMemo(() => {
+    if (activeTab !== 'fire') return [];
+    
+    const months = [
+      "Jan", "Fév", "Mar", "Avr", "Mai", "Juin", 
+      "Juil", "Août", "Sep", "Oct", "Nov", "Déc"
+    ];
+    
+    const dataByMonth = new Array(12).fill(0);
+
+    filteredFires.forEach(f => {
+      const monthIndex = parseInt(f.date.split('-')[1]) - 1;
+      if (!isNaN(monthIndex)) {
+        dataByMonth[monthIndex] += f.surface_ha;
+      }
+    });
+
+    return months.map((m, i) => ({
+      subject: m,
+      A: Math.round(dataByMonth[i]),
+      fullMark: Math.max(...dataByMonth)
     }));
   }, [activeTab, filteredFires]);
 
@@ -511,49 +536,87 @@ function App() {
                   </ResponsiveContainer>
                 </div>
               </div>
+            ) : activeTab === 'fire' ? (
+              // --- INCENDIES : HISTORIQUE AVEC ZOOM + RADAR SAISONNALITÉ ---
+              <div className="h-full flex flex-col gap-4">
+                {/* HAUT : HISTORIQUE AVEC ZOOM */}
+                <div className="h-1/2 min-h-0">
+                  <p className="text-xs text-slate-400 mb-2">Historique annuel (utilisez la barre pour zoomer)</p>
+                  <ResponsiveContainer width="100%" height="90%">
+                    <BarChart data={fireHistoryData} margin={{ top: 10, right: 30, left: 0, bottom: 30 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                      <XAxis dataKey="name" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 10 }} />
+                      <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 10 }} />
+                      <RechartsTooltip 
+                        contentStyle={{ 
+                          backgroundColor: '#0f172a', 
+                          borderColor: '#334155', 
+                          borderRadius: '0.5rem',
+                          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                        }} 
+                        labelStyle={{ color: '#ef4444', fontWeight: 'bold' }}
+                        itemStyle={{ color: '#e2e8f0' }}
+                        cursor={{ fill: '#1e293b', opacity: 0.5 }} 
+                      />
+                      <Bar dataKey="value" name="Surface (ha)" fill="#ef4444" radius={[4, 4, 0, 0]} />
+                      <Brush 
+                        dataKey="name" 
+                        height={25} 
+                        stroke="#ef4444" 
+                        fill="#1e293b" 
+                        tickFormatter={() => ''}
+                      />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+
+                {/* BAS : RADAR DE SAISONNALITÉ */}
+                <div className="h-1/2 min-h-0 border-t border-dark-700 pt-2">
+                  <p className="text-xs text-slate-400 mb-2">Saisonnalité des feux (surface cumulée par mois)</p>
+                  <ResponsiveContainer width="100%" height="90%">
+                    <RadarChart cx="50%" cy="50%" outerRadius="70%" data={fireSeasonalityData}>
+                      <PolarGrid stroke="#334155" />
+                      <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 11 }} />
+                      <PolarRadiusAxis angle={90} domain={[0, 'auto']} tick={false} axisLine={false} />
+                      <Radar
+                        name="Surface Brûlée (ha)"
+                        dataKey="A"
+                        stroke="#ef4444"
+                        fill="#ef4444"
+                        fillOpacity={0.5}
+                      />
+                      <RechartsTooltip 
+                        contentStyle={{ 
+                          backgroundColor: '#0f172a', 
+                          borderColor: '#334155', 
+                          borderRadius: '0.5rem',
+                          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                        }}
+                        labelStyle={{ color: '#ef4444', fontWeight: 'bold' }}
+                        itemStyle={{ color: '#e2e8f0' }}
+                        formatter={(value) => [`${value.toLocaleString()} ha`, 'Surface']}
+                      />
+                    </RadarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
             ) : (
+              // --- GRAPHIQUE SPORT (SCATTER) ---
               <ResponsiveContainer width="100%" height="100%">
-                {activeTab === 'fire' ? (
-                  // --- GRAPHIQUE INCENDIES (BARRES) ---
-                  <BarChart data={fireHistoryData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
-                    <XAxis dataKey="name" stroke="#94a3b8" tick={{ fill: '#94a3b8' }} />
-                    <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8' }} label={{ value: 'Surface (ha)', angle: -90, position: 'insideLeft', fill: '#64748b' }} />
-                    <RechartsTooltip
-                      contentStyle={{
-                        backgroundColor: '#0f172a',
-                        borderColor: '#334155',
-                        borderRadius: '0.5rem',
-                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
-                      }}
-                      labelStyle={{
-                        color: config.theme,
-                        fontWeight: 'bold',
-                        marginBottom: '0.25rem'
-                      }}
-                      itemStyle={{
-                        color: '#e2e8f0'
-                      }}
-                      cursor={{ fill: '#1e293b', opacity: 0.5 }}
-                    />
-                    <Bar dataKey="value" name="Surface brûlée (ha)" fill="#ef4444" radius={[4, 4, 0, 0]} />
-                  </BarChart>
-                ) : (
-                  // --- GRAPHIQUE SPORT (SCATTER) ---
-                  <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 60 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
-                    <XAxis
-                      type="number"
-                      dataKey="population_15_29"
-                      name="Population"
-                      stroke="#94a3b8"
-                      tick={{ fill: '#94a3b8' }}
-                    >
-                      <Label
-                        value={config.xLabel}
-                        offset={-10}
-                        position="insideBottom"
-                        style={{ fill: '#cbd5e1', fontSize: '12px' }}
+                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 60 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                  <XAxis
+                    type="number"
+                    dataKey="population_15_29"
+                    name="Population"
+                    stroke="#94a3b8"
+                    tick={{ fill: '#94a3b8' }}
+                  >
+                    <Label
+                      value={config.xLabel}
+                      offset={-10}
+                      position="insideBottom"
+                      style={{ fill: '#cbd5e1', fontSize: '12px' }}
                       />
                     </XAxis>
                     <YAxis
@@ -606,7 +669,6 @@ function App() {
                       fillOpacity={0.7}
                     />
                   </ScatterChart>
-                )}
               </ResponsiveContainer>
             )}
           </div>
