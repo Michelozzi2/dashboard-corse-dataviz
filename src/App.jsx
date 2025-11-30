@@ -357,10 +357,10 @@ function App() {
       )}
 
       {/* DASHBOARD CONTENT */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-[800px] lg:h-[600px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
         {/* CARTE */}
-        <div className="bg-dark-800 border border-dark-700 rounded-xl flex flex-col overflow-hidden shadow-2xl relative">
+        <div className="bg-dark-800 border border-dark-700 rounded-xl flex flex-col overflow-hidden shadow-2xl relative h-[400px] lg:h-[700px]">
           <div className="p-4 border-b border-dark-700 bg-dark-800 z-10">
             <h2 className="text-lg font-semibold text-white flex items-center gap-2">
               <MapPin className="w-5 h-5" style={{ color: config.theme }} /> Cartographie : {config.title}
@@ -444,8 +444,8 @@ function App() {
         </div>
 
         {/* GRAPHIQUE (Dynamique selon l'onglet) */}
-        <div className="bg-dark-800 border border-dark-700 rounded-xl p-4 flex flex-col shadow-2xl">
-          <div className="mb-6 flex justify-between items-center">
+        <div className="bg-dark-800 border border-dark-700 rounded-xl p-4 flex flex-col shadow-2xl h-[500px] lg:h-[700px]">
+          <div className="mb-4 flex justify-between items-center">
             <h2 className="text-lg font-semibold text-white flex items-center gap-2">
               <Activity className="w-5 h-5" style={{ color: config.sec }} /> Analyse des données
             </h2>
@@ -453,13 +453,13 @@ function App() {
 
           <div className="flex-1">
             {activeTab === 'energy' ? (
-              // --- ÉNERGIE : SCATTER + PIE CHART CÔTE À CÔTE ---
-              <div className="flex flex-col lg:flex-row gap-4 h-full">
-                {/* Scatter Chart */}
-                <div className="flex-1 min-h-[250px]">
-                  <p className="text-xs text-slate-400 mb-2 text-center">Corrélation Population / Consommation</p>
+              // --- ÉNERGIE : SCATTER + PIE CHART EMPILÉS ---
+              <div className="h-full flex flex-col gap-2">
+                {/* HAUT : Scatter Chart */}
+                <div className="h-[45%] min-h-0">
+                  <p className="text-xs text-slate-400 mb-2">Corrélation Population / Consommation</p>
                   <ResponsiveContainer width="100%" height="90%">
-                    <ScatterChart margin={{ top: 10, right: 20, bottom: 20, left: 60 }}>
+                    <ScatterChart margin={{ top: 10, right: 20, bottom: 25, left: 60 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
                       <XAxis
                         type="number"
@@ -525,21 +525,21 @@ function App() {
                   </ResponsiveContainer>
                 </div>
 
-                {/* Donut Chart */}
-                <div className="flex-1 min-h-[250px]">
-                  <p className="text-xs text-slate-400 mb-2 text-center">Répartition par secteur (Corse entière)</p>
-                  <ResponsiveContainer width="100%" height="90%">
+                {/* BAS : Donut Chart */}
+                <div className="h-[55%] min-h-0 border-t border-dark-700 pt-2">
+                  <p className="text-xs text-slate-400 mb-1">Répartition par secteur (Corse entière)</p>
+                  <ResponsiveContainer width="100%" height="95%">
                     <PieChart>
                       <Pie
                         data={energyPieData}
                         cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={90}
+                        cy="42%"
+                        innerRadius="35%"
+                        outerRadius="55%"
                         paddingAngle={3}
                         dataKey="value"
                         labelLine={false}
-                        label={({ name, value }) => `${value}%`}
+                        label={({ value }) => `${value}%`}
                       >
                         {energyPieData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} stroke={entry.color} />
@@ -630,7 +630,7 @@ function App() {
                 </div>
               </div>
             ) : (
-              // --- SPORT : SCATTER + HISTOGRAMME INÉGALITÉS ---
+              // --- SPORT : SCATTER + HISTOGRAMME INÉGALITÉS EMPILÉS ---
               <div className="h-full flex flex-col gap-4">
                 {/* HAUT : SCATTER CHART */}
                 <div className="h-1/2 min-h-0">
@@ -709,7 +709,7 @@ function App() {
                 <div className="h-1/2 min-h-0 border-t border-dark-700 pt-2">
                   <p className="text-xs text-slate-400 mb-2">Répartition des communes par nombre d'équipements</p>
                   <ResponsiveContainer width="100%" height="90%">
-                    <BarChart data={sportDistributionData} margin={{ top: 10, right: 20, bottom: 20, left: 10 }}>
+                    <BarChart data={sportDistributionData} margin={{ top: 10, right: 20, bottom: 20, left: 50 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
                       <XAxis 
                         dataKey="name" 
